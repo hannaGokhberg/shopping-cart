@@ -9,9 +9,9 @@
   <span>{{ item.price | currency }}</span>
 </div>
 
-<div class="cart-item" *ngFor="let item of items">
+<div class="cart-item" >
   <span>TOTAL</span>
-  <!--<span> {{ }}</span>-->
+  <span> {{ cartService.calculateTotal() | currency }}</span>
 </div>
 
 <form [formGroup]="checkoutForm" (ngSubmit)="onSubmit(checkoutForm.value)">

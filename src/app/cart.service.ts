@@ -8,7 +8,7 @@ import { products } from './products';
 export class CartService {
 
   items = [];
-  total = 0;
+  //total = 0;
 
   constructor(
     private http: HttpClient
@@ -22,13 +22,13 @@ export class CartService {
     return this.items;
   }
 
-  /*calculateTotal() {
+  calculateTotal() {
     let total = 0;
     for (let i = 0; i < this.items.length; i++) {
-      total += this.items.price;
+      total += this.items[i].price;
     }
     return total;
-  }*/
+  }
 
   clearCart() {
     this.items = [];
