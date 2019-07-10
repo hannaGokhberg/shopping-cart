@@ -1,18 +1,17 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
-import { products } from '../products';
 import { CartService } from '../cart.service';
+import { ProductsService } from '../products.service';
 
 @Component({
   selector: 'app-product-list',
   templateUrl: './product-list.component.html',
   styleUrls: ['./product-list.component.css']
 })
-export class ProductListComponent {
-  products = products;
-
-  constructor(private cartService: CartService){
-
+export class ProductListComponent implements OnInit {
+  products: JSON;
+  constructor(private cartService: CartService, private productsService: ProductsService ) {
+    
   }
 
   addToCart(product) {
@@ -27,5 +26,14 @@ export class ProductListComponent {
   onNotify() {
     window.alert('You will be notified when the product is available');
   }
+
+  ngOnInit(){
+    this.productsService.getProducts()
+    .subscribe((data: JSON) => {
+      this.products = data;
+    });
+  }
+
+  
 }
 

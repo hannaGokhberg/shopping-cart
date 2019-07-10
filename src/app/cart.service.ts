@@ -8,7 +8,6 @@ import { products } from './products';
 export class CartService {
 
   items = [];
-  //total = 0;
 
   constructor(
     private http: HttpClient

@@ -5,12 +5,12 @@
   <div *ngFor="let product of products; index as productId" fxFlex="0 1 calc(33.3% - 32px)">
 
     <h3>
-      <a [title]="product.name + ' details'" [routerLink]="['/products', productId]">
+      <a [title]="product.name + ' details'" [routerLink]="['/products', product._id]">
         {{ product.name }}
       </a>
     </h3>
 
-    <img src="{{ product.picture }}" style="clip-path: circle(45%)" [routerLink]="['/products', productId]">
+    <img src="{{ product.picture }}" style="clip-path: circle(45%)" [routerLink]="['/products', product._id]">
 
     <br>
 
