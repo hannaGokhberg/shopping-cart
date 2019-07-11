@@ -1,21 +1,21 @@
-<h2>Products</h2>
+
 
 <div class="container" fxLayout="row wrap" fxLayout.xs="column" fxLayoutGap="32px" fxLayoutAlign="flex-start">
 
   <div *ngFor="let product of products; index as productId" fxFlex="0 1 calc(33.3% - 32px)">
 
     <h3>
-      <a [title]="product.name + ' details'" [routerLink]="['/products', product._id]">
+      <a [title]="product.name + ' details'" [routerLink]="['/products', product._id]" fxLayoutAlign="center">
         {{ product.name }}
       </a>
     </h3>
 
-    <img src="{{ product.picture }}" style="clip-path: circle(45%)" [routerLink]="['/products', product._id]">
+    <img src="{{ product.picture }}" style="clip-path: circle(45%)" [routerLink]="['/products', product._id]" fxLayoutAlign="center">
 
     <br>
 
     <!--water icons-->
-    <div>
+    <div fxLayoutAlign="center">
       <div *ngIf="product.water==1">
         <span class="fa fa-tint checked" style="color: rgb(24, 105, 228)"></span>
         <span class="fa fa-tint"></span>
@@ -58,7 +58,7 @@
     </div>
 
     <!--light icons-->
-    <div>
+    <div fxLayoutAlign="center">
       <div *ngIf="product.light==1">
         <span class="fa fa-sun checked" style="color: rgb(225, 228, 24);"></span>
         <span class="fa fa-sun"></span>
@@ -101,13 +101,13 @@
     </div>
     <br>
 
-    <button (click)="addToCart(product)">Buy</button>
+    <div  fxLayoutGap="10px" fxLayoutAlign="center">
+      <button (click)="addToCart(product)">Buy</button>
 
-    <button (click)="share()">
-      Share
-    </button>
+      <button (click)="share()">Share</button>
+    </div>  
 
-    <app-product-alerts
+    <app-product-alerts fxLayoutAlign="center"
     [product]="product"
     (notify)="onNotify()">
     </app-product-alerts>
