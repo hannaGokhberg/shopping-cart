@@ -1,114 +1,110 @@
-<h2>Product Details</h2>
+<h3>{{ product.name }}</h3>
 
-<div *ngIf="product">
-  <table style="width:80%">
+<div *ngIf="product" class="container" fxLayout="row wrap" fxLayout.xs="column" fxLayoutGap="32px" fxLayoutAlign="flex-start">
 
-    <tr>
-      <th>
-        <h3>{{ product.name }}</h3>
-      </th>
-    </tr>
+  <div class="container" fxLayout="column" fxFlex="30%"> 
+    
+    <img src="{{ product.picture }}" >
+  </div>
+  
+  <div class="container" fxLayout="column" fxFlex="65%"> 
+    <p>{{ product.description }}</p>
 
-    <tr>
-      <td>
-        <img src="{{ product.picture }}">
-      </td>
-      <td>
-        <p>{{ product.description }}</p>
+    <div class="container" fxLayout="row wrap">
+      <!--water icons-->
+      <div>
+      <div *ngIf="product.water==1">
+        <span class="fa fa-tint checked" style="color: rgb(24, 105, 228)"></span>
+        <span class="fa fa-tint"></span>
+        <span class="fa fa-tint"></span>
+        <span class="fa fa-tint"></span>
+        <span class="fa fa-tint"></span>
+      </div>
 
-        <!--water icons-->
-        <div>
-        <div *ngIf="product.water==1">
-          <span class="fa fa-tint checked" style="color: rgb(24, 105, 228)"></span>
-          <span class="fa fa-tint"></span>
-          <span class="fa fa-tint"></span>
-          <span class="fa fa-tint"></span>
-          <span class="fa fa-tint"></span>
-        </div>
+      <div *ngIf="product.water==2">
+        <span class="fa fa-tint checked" style="color: rgb(24, 105, 228)"></span>
+        <span class="fa fa-tint checked" style="color: rgb(24, 105, 228)"></span>
+        <span class="fa fa-tint"></span>
+        <span class="fa fa-tint"></span>
+        <span class="fa fa-tint"></span>
+      </div>
 
-        <div *ngIf="product.water==2">
-          <span class="fa fa-tint checked" style="color: rgb(24, 105, 228)"></span>
-          <span class="fa fa-tint checked" style="color: rgb(24, 105, 228)"></span>
-          <span class="fa fa-tint"></span>
-          <span class="fa fa-tint"></span>
-          <span class="fa fa-tint"></span>
-        </div>
+      <div *ngIf="product.water==3">
+        <span class="fa fa-tint checked" style="color: rgb(24, 105, 228)"></span>
+        <span class="fa fa-tint checked" style="color: rgb(24, 105, 228)"></span>
+        <span class="fa fa-tint checked" style="color: rgb(24, 105, 228)"></span>
+        <span class="fa fa-tint"></span>
+        <span class="fa fa-tint"></span>
+      </div>
 
-        <div *ngIf="product.water==3">
-          <span class="fa fa-tint checked" style="color: rgb(24, 105, 228)"></span>
-          <span class="fa fa-tint checked" style="color: rgb(24, 105, 228)"></span>
-          <span class="fa fa-tint checked" style="color: rgb(24, 105, 228)"></span>
-          <span class="fa fa-tint"></span>
-          <span class="fa fa-tint"></span>
-        </div>
+      <div *ngIf="product.water==4">
+        <span class="fa fa-tint checked" style="color: rgb(24, 105, 228)"></span>
+        <span class="fa fa-tint checked" style="color: rgb(24, 105, 228)"></span>
+        <span class="fa fa-tint checked" style="color: rgb(24, 105, 228)"></span>
+        <span class="fa fa-tint checked" style="color: rgb(24, 105, 228)"></span>
+        <span class="fa fa-tint"></span>
+      </div>
 
-        <div *ngIf="product.water==4">
-          <span class="fa fa-tint checked" style="color: rgb(24, 105, 228)"></span>
-          <span class="fa fa-tint checked" style="color: rgb(24, 105, 228)"></span>
-          <span class="fa fa-tint checked" style="color: rgb(24, 105, 228)"></span>
-          <span class="fa fa-tint checked" style="color: rgb(24, 105, 228)"></span>
-          <span class="fa fa-tint"></span>
-        </div>
+      <div *ngIf="product.water==5">
+        <span class="fa fa-tint checked" style="color: rgb(24, 105, 228)"></span>
+        <span class="fa fa-tint checked" style="color: rgb(24, 105, 228)"></span>
+        <span class="fa fa-tint checked" style="color: rgb(24, 105, 228)"></span>
+        <span class="fa fa-tint checked" style="color: rgb(24, 105, 228)"></span>
+        <span class="fa fa-tint checked" style="color: rgb(24, 105, 228)"></span>
+      </div>
+      </div>
 
-        <div *ngIf="product.water==5">
-          <span class="fa fa-tint checked" style="color: rgb(24, 105, 228)"></span>
-          <span class="fa fa-tint checked" style="color: rgb(24, 105, 228)"></span>
-          <span class="fa fa-tint checked" style="color: rgb(24, 105, 228)"></span>
-          <span class="fa fa-tint checked" style="color: rgb(24, 105, 228)"></span>
-          <span class="fa fa-tint checked" style="color: rgb(24, 105, 228)"></span>
-        </div>
-        </div>
+      <!--light icons-->
+      <div>
+      <div *ngIf="product.light==1">
+        <span class="fa fa-sun checked" style="color: rgb(225, 228, 24);"></span>
+        <span class="fa fa-sun"></span>
+        <span class="fa fa-sun"></span>
+        <span class="fa fa-sun"></span>
+        <span class="fa fa-sun"></span>
+      </div>
 
-        <!--light icons-->
-        <div>
-        <div *ngIf="product.light==1">
-          <span class="fa fa-sun checked" style="color: rgb(225, 228, 24);"></span>
-          <span class="fa fa-sun"></span>
-          <span class="fa fa-sun"></span>
-          <span class="fa fa-sun"></span>
-          <span class="fa fa-sun"></span>
-        </div>
+      <div *ngIf="product.light==2">
+        <span class="fa fa-sun checked" style="color: rgb(225, 228, 24);"></span>
+        <span class="fa fa-sun checked" style="color: rgb(225, 228, 24);"></span>
+        <span class="fa fa-sun"></span>
+        <span class="fa fa-sun"></span>
+        <span class="fa fa-sun"></span>
+      </div>
 
-        <div *ngIf="product.light==2">
-          <span class="fa fa-sun checked" style="color: rgb(225, 228, 24);"></span>
-          <span class="fa fa-sun checked" style="color: rgb(225, 228, 24);"></span>
-          <span class="fa fa-sun"></span>
-          <span class="fa fa-sun"></span>
-          <span class="fa fa-sun"></span>
-        </div>
+      <div *ngIf="product.light==3">
+        <span class="fa fa-sun checked" style="color: rgb(225, 228, 24);"></span>
+        <span class="fa fa-sun checked" style="color: rgb(225, 228, 24);"></span>
+        <span class="fa fa-sun checked" style="color: rgb(225, 228, 24);"></span>
+        <span class="fa fa-sun"></span>
+        <span class="fa fa-sun"></span>
+      </div>
 
-        <div *ngIf="product.light==3">
-          <span class="fa fa-sun checked" style="color: rgb(225, 228, 24);"></span>
-          <span class="fa fa-sun checked" style="color: rgb(225, 228, 24);"></span>
-          <span class="fa fa-sun checked" style="color: rgb(225, 228, 24);"></span>
-          <span class="fa fa-sun"></span>
-          <span class="fa fa-sun"></span>
-        </div>
+      <div *ngIf="product.light==4">
+        <span class="fa fa-sun checked" style="color: rgb(225, 228, 24);"></span>
+        <span class="fa fa-sun checked" style="color: rgb(225, 228, 24);"></span>
+        <span class="fa fa-sun checked" style="color: rgb(225, 228, 24);"></span>
+        <span class="fa fa-sun checked" style="color: rgb(225, 228, 24);"></span>
+        <span class="fa fa-sun"></span>
+      </div>
 
-        <div *ngIf="product.light==4">
-          <span class="fa fa-sun checked" style="color: rgb(225, 228, 24);"></span>
-          <span class="fa fa-sun checked" style="color: rgb(225, 228, 24);"></span>
-          <span class="fa fa-sun checked" style="color: rgb(225, 228, 24);"></span>
-          <span class="fa fa-sun checked" style="color: rgb(225, 228, 24);"></span>
-          <span class="fa fa-sun"></span>
-        </div>
+      <div *ngIf="product.light==5">
+        <span class="fa fa-sun checked" style="color: rgb(225, 228, 24);"></span>
+        <span class="fa fa-sun checked" style="color: rgb(225, 228, 24);"></span>
+        <span class="fa fa-sun checked" style="color: rgb(225, 228, 24);"></span>
+        <span class="fa fa-sun checked" style="color: rgb(225, 228, 24);"></span>
+        <span class="fa fa-sun checked" style="color: rgb(225, 228, 24);"></span>
+      </div>
+      </div>
+    </div>
+   
 
-        <div *ngIf="product.light==5">
-          <span class="fa fa-sun checked" style="color: rgb(225, 228, 24);"></span>
-          <span class="fa fa-sun checked" style="color: rgb(225, 228, 24);"></span>
-          <span class="fa fa-sun checked" style="color: rgb(225, 228, 24);"></span>
-          <span class="fa fa-sun checked" style="color: rgb(225, 228, 24);"></span>
-          <span class="fa fa-sun checked" style="color: rgb(225, 228, 24);"></span>
-        </div>
-        </div>
-        <br>
+    <h4>{{ product.price | currency }}</h4>
+    <button *ngIf="product.availability==true" (click)="addToCart(product)">Buy</button>
+    <app-product-alerts [product]="product" (notify)="onNotify()">
+    </app-product-alerts>
+  </div>
 
-        <h4>{{ product.price | currency }}</h4>
-        <button (click)="addToCart(product)">Buy</button>
-      </td>
-    </tr>
-
-  </table>
 </div>
 
 
