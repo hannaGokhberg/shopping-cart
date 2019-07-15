@@ -12,6 +12,7 @@ import { ProductDetailsComponent } from './product-details/product-details.compo
 import { CartComponent } from './cart/cart.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ShippingComponent } from './shipping/shipping.component';
+import { OrdersService } from './orders.service';
 
 
 @NgModule({
@@ -36,6 +37,7 @@ import { ShippingComponent } from './shipping/shipping.component';
     CartComponent,
     ShippingComponent
   ],
+  providers: [ OrdersService ],
   bootstrap: [ AppComponent ]
 })
 export class AppModule { }
