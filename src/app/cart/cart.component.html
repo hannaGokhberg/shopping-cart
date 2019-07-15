@@ -10,15 +10,25 @@
 </div>
 
 <div class="cart-item" >
-  <span>TOTAL</span>
-  <span> {{ cartService.calculateTotal() | currency }}</span>
+  <span style="font-weight: bold">TOTAL</span>
+  <span style="font-weight: bold"> {{ cartService.calculateTotal() | currency }}</span>
 </div>
 
 <form [formGroup]="checkoutForm" (ngSubmit)="onSubmit(checkoutForm.value)">
 
   <div>
-    <label>Name</label>
+    <label>Credit Card Owner Name</label>
     <input type="text" formControlName="name">
+  </div>
+
+  <div>
+    <label>Credit Card Number</label>
+    <input type="text" formControlName="credit_number">
+  </div>
+
+  <div>
+    <label>Cell Phone Number</label>
+    <input type="text" formControlName="phone">
   </div>
 
   <div>

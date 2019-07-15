@@ -102,15 +102,15 @@
     <br>
 
     <div  fxLayoutGap="10px" fxLayoutAlign="center">
-      <button (click)="addToCart(product)">Buy</button>
-
-      <button (click)="share()">Share</button>
-    </div>  
-
-    <app-product-alerts fxLayoutAlign="center"
+      <button *ngIf="product.availability == true" (click)="addToCart(product)">Buy</button>
+      <app-product-alerts fxLayoutAlign="center"
     [product]="product"
     (notify)="onNotify()">
     </app-product-alerts>
+      <button (click)="share()">Share</button>
+    </div>  
+
+    
 
   </div>
 
