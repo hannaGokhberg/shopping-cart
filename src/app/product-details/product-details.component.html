@@ -1,23 +1,17 @@
-<h2>Product Details</h2>
+<h3>{{ product.name }}</h3>
 
-<div *ngIf="product">
-  <table style="width:80%">
+<div *ngIf="product" class="container" fxLayout="row wrap" fxLayout.xs="column" fxLayoutGap="32px" fxLayoutAlign="flex-start">
+  
+  <div class="container" fxLayout="column" fxFlex="28%">
+    
+    <img style="margin-top: 20px; margin-left: 0px" src="{{ product.picture }}">
+  </div>
 
-    <tr>
-      <th>
-        <h3>{{ product.name }}</h3>
-      </th>
-    </tr>
+  <div class="container" fxLayout="column" fxFlex="50%">
+  <p>{{ product.description }}</p>
 
-    <tr>
-      <td>
-        <img src="{{ product.picture }}">
-      </td>
-      <td>
-        <p>{{ product.description }}</p>
-
-        <!--water icons-->
-        <div>
+  <!--water icons-->
+  <div>
         <div *ngIf="product.water==1">
           <span class="fa fa-tint checked" style="color: rgb(24, 105, 228)"></span>
           <span class="fa fa-tint"></span>
@@ -57,10 +51,10 @@
           <span class="fa fa-tint checked" style="color: rgb(24, 105, 228)"></span>
           <span class="fa fa-tint checked" style="color: rgb(24, 105, 228)"></span>
         </div>
-        </div>
+  </div>
 
-        <!--light icons-->
-        <div>
+  <!--light icons-->
+  <div>
         <div *ngIf="product.light==1">
           <span class="fa fa-sun checked" style="color: rgb(225, 228, 24);"></span>
           <span class="fa fa-sun"></span>
@@ -100,15 +94,13 @@
           <span class="fa fa-sun checked" style="color: rgb(225, 228, 24);"></span>
           <span class="fa fa-sun checked" style="color: rgb(225, 228, 24);"></span>
         </div>
-        </div>
-        <br>
+  </div>
+  
 
-        <h4>{{ product.price | currency }}</h4>
-        <button (click)="addToCart(product)">Buy</button>
-      </td>
-    </tr>
-
-  </table>
+  <h4>{{ product.price | currency }}</h4>
+  <button (click)="addToCart(product)">Buy</button>
+  </div>
+     
 </div>
 
 
