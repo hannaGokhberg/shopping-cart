@@ -11,7 +11,6 @@ import { ProductsService } from '../products.service';
 export class ProductListComponent implements OnInit {
   products: JSON;
   constructor(private cartService: CartService, private productsService: ProductsService ) {
-    
   }
 
   addToCart(product) {

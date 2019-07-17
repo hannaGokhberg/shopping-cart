@@ -29,13 +29,19 @@ export class CartComponent implements OnInit {
 
    onSubmit(customerData) {
     // Process checkout data here
-    console.warn('Your order has been submitted', customerData);
     this.items = this.cartService.clearCart();
     this.checkoutForm.reset();
    }
 
-   addOrder(name, credit_number, phone, address) {
-    this.os.addOrder(name, credit_number, phone, address);
+   addOrder(customerData) {
+    let items_ids = [];
+    let i;
+
+    for (i=0; i<this.items.length; i++) {
+        items_ids.push(this.items[i]._id);
+    }
+
+    this.os.addOrder(customerData.name, customerData.credit_number, customerData.phone, customerData.address, items_ids);
   }
 
 

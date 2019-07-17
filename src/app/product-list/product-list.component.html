@@ -2,7 +2,7 @@
 
 <div class="container" fxLayout="row wrap" fxLayout.xs="column" fxLayoutGap="32px" fxLayoutAlign="flex-start">
 
-  <div *ngFor="let product of products; index as productId" fxFlex="0 1 calc(33.3% - 32px)">
+  <div *ngFor="let product of products; index as productId "  fxFlex="0 1 calc(33.3% - 32px)">
 
     <h3>
       <a [title]="product.name + ' details'" [routerLink]="['/products', product._id]" fxLayoutAlign="center">

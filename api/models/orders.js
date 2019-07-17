@@ -13,7 +13,10 @@ let Orders = new Schema({
     type: String
   },
   address: {
-    type: String 
+    type: String  
+  },
+  item_ids: {
+    type: Array
   }
 },{
     collection: 'orders'

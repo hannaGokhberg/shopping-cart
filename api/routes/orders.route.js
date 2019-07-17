@@ -7,6 +7,7 @@ let Order = require('../models/orders');
 
 // Defined store route
 ordersRoutes.route('/add').post(function (req, res) {
+  console.log(req.body);
   let orders = new Order(req.body);
   orders.save()
     .then(orders => {
