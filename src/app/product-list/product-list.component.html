@@ -102,7 +102,7 @@
     <br>
 
     <div  fxLayoutGap="10px" fxLayoutAlign="center">
-      <button *ngIf="product.availability == true" (click)="addToCart(product)">Buy</button>
+      <button *ngIf="product.availability == true" (click)="addToCart(product)" id="buy_{{ product._id }}">Buy</button>
       <app-product-alerts fxLayoutAlign="center"
     [product]="product"
     (notify)="onNotify()">
